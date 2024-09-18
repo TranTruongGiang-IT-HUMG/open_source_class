@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- giao diện đăng nhập -->
+    <h1>-- Chương Trình Tính Tuổi -- </h1>
+    <form action="">
+        <label for="">Họ Tên: </label>
+        <input type="text" name="ht">
+        <label for="">Năm Sinh</label>
+        <input type="text" name="ns">
+        <input type="button" value="Tính" onclick="calAge()">
+    </form>
+
+    <script>
+        function calAge(){
+            let ns = document.querySelector('input[name="ns"]').value
+            let ht = document.querySelector('input[name="ht"]').value
+            
+            // tính tuổi
+            let age = new Date().getFullYear() - ns;
+
+            let h2_tag = document.querySelector('h2');
+            if (h2_tag){
+                h2_tag.innerHTML = ht + " hiện tại " + age + " tuổi!";
+            }else{
+                h2_tag = document.createElement('h2');
+                h2_tag.innerHTML = ht + " hiện tại " + age + " tuổi!";
+                document.body.appendChild(h2_tag);
+            }
+        }
+    </script>    
 </body>
 </html>
